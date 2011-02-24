@@ -1,9 +1,9 @@
 FinalApp::Application.routes.draw do
-  get "home/index"
 
-  get "home/about"
+  match '/contact', :to => 'home#contact'
+  match '/about', :to => 'home#about'
 
-  get "home/contact"
+  root :to => 'home#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
