@@ -1,7 +1,10 @@
 FinalApp::Application.routes.draw do
 
+  get "users/new"
+
   match '/contact', :to => 'home#contact'
   match '/about', :to => 'home#about'
+  match 'signup', :to => 'users#new'
 
   root :to => 'home#index'
 

@@ -6,4 +6,9 @@ describe "LayoutLinks" do
     response.should have_selector("title", :content => "Home")
   end
   #Similarly write tests for other links like contact and about
+  #
+  it "should be a sign up page at /signup" do
+    get '/signup'
+    response.should have_selector("title", :content => "Sign up")
+  end
 end
