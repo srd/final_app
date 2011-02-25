@@ -1,10 +1,16 @@
 FinalApp::Application.routes.draw do
+  resources :user_sessions
+  resources :users
+
+  get "user_sessions/new"
 
   get "users/new"
 
   match '/contact', :to => 'home#contact'
   match '/about', :to => 'home#about'
   match 'signup', :to => 'users#new'
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
 
   root :to => 'home#index'
 

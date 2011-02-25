@@ -11,6 +11,16 @@
   <div class="container">
     <%= render 'layouts/header' %>
   </div>
+  <div>
+    <% if !current_user %>
+      <%= link_to "Register" , new_user_path %>
+      <%= link_to "Login", login_path %>
+    <% else %>
+      <%= link_to "Account", users_path %>
+      <%= link_to "Logout", logout_path %>
+      <!--<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>-->
+    <% end %>
+  </div>
   <div class="content">
     <%= yield %>
   </div>
