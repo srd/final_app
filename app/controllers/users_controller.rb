@@ -6,12 +6,13 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def show
-    @user = @current_user
+  def index
+    @title = "Home page"
+    @users = User.all
   end
 
-  def index
-    @title = "Users"
+  def show
+    @user = @current_user
   end
 
   def edit
@@ -19,7 +20,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = Users.new(parmas[:user])
+    @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "Successfully registered!"
       redirect_back_or_default users_path

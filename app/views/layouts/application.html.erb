@@ -19,10 +19,10 @@
     <% else %>
       <%= link_to "Account", users_path %>
       <%= link_to "Logout", logout_path %>
-      <!--<%= link_to "Logout", user_session_path, :method => :delete, :confirm => "Are you sure you want to logout?" %>-->
     <% end %>
   </div>
   <div class="content">
+    <%= flash[:notice] %>
     <%= yield %>
   </div>
     <%= render 'layouts/footer' %>
