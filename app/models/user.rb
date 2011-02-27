@@ -24,4 +24,10 @@ class User < ActiveRecord::Base
   acts_as_authentic do |c|
     failed_login_ban_for = 24.hours
   end
+
+  def deliver_password_reset_instructions!
+    reset_perishable_token!
+    Notifier.deliver_password_reset_instructions(self)
+  end
+
 end

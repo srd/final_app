@@ -1,6 +1,7 @@
 FinalApp::Application.routes.draw do
   resources :user_sessions
   resources :users
+  resources :password_resets
 
   get "user_sessions/new"
 

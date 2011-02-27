@@ -9,6 +9,7 @@ gem 'sqlite3-ruby', '1.3.2', :require => 'sqlite3'
 gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'authlogic'
 gem 'rails3-generators'
+gem 'mail'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
